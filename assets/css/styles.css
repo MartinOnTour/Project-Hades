@@ -1,0 +1,151 @@
+:root {
+    /* Main Primary color */
+    --color-primary-0 : #151f79 ;
+    --color-primary-1 : #8494eb ;
+    --color-primary-2 : #152479 ;
+    
+    /* Main Secondary colors */
+    --color-secondary-0 : white;
+
+
+    /* Main Tertiary color (2) */
+    --color-tertiary-0 : #982966;
+    --color-tertiary-1 : #a07e91;
+    --color-tertiary-2 : #982966;
+        
+    /* Font Stuff*/
+    --normal-font: 400;
+    --bold-font: 700;
+    --bolder-font: 900;
+
+    --border-radius: 5px;
+    --bottom-margin: 0.5rem;
+    --bottom-margin-2: 1rem;
+    --line-height: 1.7rem;
+    --transition: 0.3s;
+    --primary-shadow: #5c5c5c;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* CSS Resets, um standartwerte zu überschreiben */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--color-tertiary-1);
+    transition: var(--transition);
+  }
+  
+  a:hover {
+    color: var(--color-tertiary-0);
+  }
+
+  .burger-menu{
+    color: var(--color-primary-0);
+    font-size: 2rem;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    display: none; 
+  }
+
+  .icon-card{
+    width: 12rem;
+    max-width: 200px;
+    padding: 1.5rem;
+    margin: 0 0.75rem;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 68.75rem;
+    margin: auto;
+  }
+
+  .hero img {
+    width: 61.2%;
+    height: 61.2%;
+  }
+
+  .highlight-box{
+    padding: 0.625rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 var(--border-radius) var(--primary-shadow);
+  }
+  
+  .highlight-box h1 {
+    margin-bottom: var(--bottom-margin);
+  }
+
+  .main-icon{
+    alt: "Logo not found";
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .more-about {
+    background-color: var(--color-tertiary-1);
+    padding: 1rem 6rem;
+  }
+  
+  .more-about h2 {
+    margin-bottom: var(--bottom-margin);
+    text-align: center;
+  }
+  
+  .more-about p {
+    line-height: var(--line-height);
+    padding: 0.4rem;
+  }
+
+  .nav-bar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex: 0 0 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
+    background-color: var(--color-primary-0);
+    box-shadow: 0 3px 5px rgb(97, 93, 93);
+  }
+
+  .nav-bar ul{
+    display: flex;
+    gap: 2rem
+  }
+
+  .nav-bar h1{
+    color: var(--color-secondary-0);
+    margin: 0 3rem;
+  }
+
+  .skills{
+    background-color: var(--color-secondary-0);
+  }
+
+  .skills h2{
+    text-align: center;
+  }
+
+  .skills-wrapper{
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
