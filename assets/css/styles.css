@@ -2,7 +2,7 @@
     /* Main Primary color */
     --color-primary-0 : #151f79 ;
     --color-primary-1 : #8494eb ;
-    --color-primary-2 : #152479 ;
+    --color-primary-2 : #1532d4 ;
     
     /* Main Secondary colors */
     --color-secondary-0 : white;
@@ -10,7 +10,7 @@
 
     /* Main Tertiary color (2) */
     --color-tertiary-0 : #982966;
-    --color-tertiary-1 : #a07e91;
+    --color-tertiary-1 : #bbbbbb;
     --color-tertiary-2 : #982966;
         
     /* Font Stuff*/
@@ -46,6 +46,10 @@
     color: var(--color-tertiary-1);
     transition: var(--transition);
   }
+
+  section{
+    margin-bottom: 3rem;
+  }
   
   a:hover {
     color: var(--color-tertiary-0);
@@ -59,12 +63,57 @@
     cursor: pointer;
     display: none; 
   }
+  .contact {
+    margin-top: 2rem;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    margin-bottom: var(--bottom-margin-2);
+  }
+  
+  .contact-form-container {
+    max-width: 40.75rem;
+    margin: 0 auto;
+    padding: 0.938rem;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px var(--primary-shadow);
+  }
 
-  .icon-card{
-    width: 12rem;
-    max-width: 200px;
-    padding: 1.5rem;
-    margin: 0 0.75rem;
+  .contact-form-container label {
+    line-height: 2.7em;
+    font-weight: var(--bold-font);
+    color: var(--color-primary-0);
+  }
+  
+  .contact-form-container textarea {
+    min-height: 6.25rem;
+    font-size: 14px;
+  }
+  
+  .contact-form-container .input-field {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    border: 2px outset var(--color-primary-0);
+    font-size: 0.875rem;
+    outline: none;
+  }
+
+  footer {
+    background-color: var(--color-primary-0);
+    padding: 1.25rem;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    color: var(--color-secondary-0);
+    margin: 1rem 0 0;
+  }
+
+  .footer-section{
+    margin: 2rem;    
   }
 
   .hero {
@@ -89,6 +138,13 @@
   
   .highlight-box h1 {
     margin-bottom: var(--bottom-margin);
+  }
+
+  .icon-card{
+    width: 12rem;
+    max-width: 200px;
+    padding: 1.5rem;
+    margin: 0 0.75rem;
   }
 
   .main-icon{
@@ -120,20 +176,70 @@
     display: flex;
     flex: 0 0 100%;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 3.5rem;
+    justify-content: left;
     background-color: var(--color-primary-0);
     box-shadow: 0 3px 5px rgb(97, 93, 93);
   }
 
   .nav-bar ul{
     display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 3.5rem;
     gap: 2rem
   }
 
   .nav-bar h1{
     color: var(--color-secondary-0);
-    margin: 0 3rem;
+    margin: 0 1.5rem;
+  }
+  .nav-bar img{
+    margin: 0 1.5rem;
+  }
+  .projects{
+    background-color: var(--color-tertiary-1);
+  }
+
+  .projects-container{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .projects-header{
+    text-align: center;
+    padding: var(--bottom-margin);
+  }
+
+  .project-card{
+    margin: 0 0.75rem;
+    width: 20rem;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+
+  .project-card img{
+    width: 80%;
+    height: 80%;
+    align-self: center;
+  }
+
+  .project-card h3{
+    padding: 0.4rem;  
+  }
+
+  .project-card p {
+    padding: 0.4rem;  
+  }
+
+  .project-card a {
+    padding: 0.4rem;  
+    color: var(--color-primary-2);
+  }
+
+  .project-card a:hover {
+    color: var(--color-primary-0);
   }
 
   .skills{
@@ -148,4 +254,35 @@
     display: flex;
     justify-content: center;
     margin: 1.5rem 0;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 1%;
+    bottom: 50%;
+  }
+  
+  .social-icon {
+    width: 2rem;
+    height: 2rem;
+  } 
+
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 2px solid var(--color-primary-0);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: var(--bold-font);
+    transition: var(--transition);
+  }
+
+  .submit-btn:hover {
+    background-color: var(--color-primary-0);
+    color: #fff;
+    cursor: pointer;
   }

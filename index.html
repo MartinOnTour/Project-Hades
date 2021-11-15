@@ -14,14 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-sclae=1.0"/>
 
         <link rel="stylesheet" href="assets/css/styles.css"/>
-
         <link rel="icon" type="image/svg" href="assets/icons/main-icon-stamped.svg"/>
-
-        <!-- Animate CSS CDN -->
-        <!--<link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-        /> -->
 
         <title>Martin Wolff | Software Developer</title>
     </head>
@@ -38,9 +31,6 @@
           <li><a href="#projects" class="nav-link">Projects</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-        <button class="burger-menu" id="burger-menu">
-          <ion-icon class="bars" name="menu-outline"></ion-icon>
-        </button>
   </nav>
 
     <!-- Hero Section -->
@@ -51,7 +41,7 @@
         loading="lazy"
         class="hero-image"/>
 
-        <div class="bio-box">
+        <div class="bio-box highlight-box">
           <h2 class="bio-title">About Me</h2>
           <p class="bio-text">
             A dedicated Software developer with a preference for backend and application coding, who isn't afraid to dabble in the frontend deapths as well. Posses a profound weakness for sci-fy books, cats and apple strudel.
@@ -64,18 +54,17 @@
     <section class="more-about">
       <h2>More About Me</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-        nesciunt excepturi quos obcaecati incidunt voluptatem ipsam sunt ipsum,
-        autem deleniti cupiditate molestias quis unde quae totam porro dicta
-        iure animi inventore, veniam hic! Omnis nulla, delectus a voluptatibus
+        I studied Applied Computational Science in Berlin. Afterwards I completed a Trainee Programm at a Small Software Company and worked there for a few years. 
+        There I was involved in all aspects of the Software livecycle. 
+        From designing new solutions, to Developing them as well as Customer- and legacy Softwaresupport.  
+        I worked mostly idependently sometimes remotly at these Projects. 
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur
-        nostrum dolor minus, libero delectus praesentium perferendis
+        Personality wise I'm a clam introverted person with a strong desire to be part an integral part of a community. 
+        Therefore a firendly attitude, willingness to compromise and active listening are deeply engrained in my character. 
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
-        consequuntur labore? Ea totam voluptas amet!
+        I'm looking for an Occupation where I can hone and contribute my skills to do my part in solving the Problems of our digitized society. 
       </p>
     </section>
   
@@ -99,32 +88,131 @@
     <section class="projects" id="projects">
       <h2 class="projects-header">Some of my Recent Projects</h2>
       <div class="projects-container">
-        <div class="projects-card">
-          <img src=""/>
-          <h3>This Website</h3>
-          <p></p>
+        <div class="project-card highlight-box">
+          <img 
+            src="assets/images/website-image.png"
+            alt="Showcase Website"
+            loading="lazy"
+            class="project-pic"/>
+          <h3>This Showcase Website</h3>
+          <p>This Website with both it's frontend and NodeJS Backend hosted on my own Server</p>
+          <a href="https://github.com/MartinOnTour/Project-Hades" target="_blank" class="project-link">Check it Out</a>
         </div>
+        <div class="project-card highlight-box">
+          <img 
+            src=""
+            alt="Game of Life"
+            loading="lazy"
+            class="project-pic"/>
+          <h3>Game of Life</h3>
+          <p>A Clientside Javascript Implementation of Conveys Game of Life</p>
+          <a href="#" target="_self" class="project-link">Check it Out</a>
+        </div>
+        <div class="project-card highlight-box">
+          <img 
+            src="assets/images/under-construction.png"
+            alt="Under Construction"
+            loading="lazy"
+            class="project-pic"/>
+          <h3>Under Construction</h3>
+          <p>A small Java Deep-Learning Project which isn't quite ready to see the light of day.</p>
+          <a href="#" target="_self" class="project-link">Work in Progress</a>
+        </div>
+
       </div>
 
     </section>
 
     <!-- Contact section -->
     <section class="contact" id="contact">
-
+      <h2>Get In Touch With Me</h2>
+      <div class="contact-form-container highlight-box">
+        <div class="contact-form">
+          <form action="" method="POST">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Enter Your Name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="sender-email"
+                placeholder="Enter Your Email"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                cols="60"
+                rows="10"
+                placeholder="Enter Your Message"
+                name="message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              type="submit"
+              value="Submit"
+              id="submit-btn"
+              class="submit-btn input-field"
+            />
+          </form>
+        </div>
+      </div>
     </section>
 
+    <!-- socials -->
+    <div class="socials">
+      <a href="https://github.com/MartinOnTour/Project-Hades" target="_blank"
+        ><img
+          src="assets/icons/github-icon.png"
+          alt="Github"
+          loading="lazy"
+          class="social-icon"
+      /></a>
+      <a href="https://www.facebook.com/maddin.wolff" target="_blank"
+        ><img
+          src="assets/icons/facebook-icon.png"
+          alt="Facebook"
+          loading="lazy"
+          class="social-icon"
+      /></a>
+    </div>
     <!-- Scroll to top -->
 
     <!-- Footer section -->
-    <section class="footer" id="footer">
+    <footer>
+      <div class="footer-section">
+        <h3>Impressum</h3>
+        <p class="copy">&copy; Copyright 2021</p>
+        <p class="copy">
+          Built with &#x2661; by Martin Wolff
+        </p>
+      </div>
 
-    </section>
+      <!-- Credits -->
+      <div class="footer-section">
+        <h3 class="copy">Credits</h3>
 
-    <!-- Credits -->
-    <section class="credits" id="credits">
-      <a href="https://www.freepik.com/vectors/business">Business vector created by stories - www.freepik.com</a>
-      <div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
-    </section>
+        <a href="https://www.freepik.com/vectors/business">Business vector created by stories - www.freepik.com</a>
+        <div>Icons erstellt von <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/de/" title="Flaticon">www.flaticon.com</a></div>
+      </div>
+
+    </footer>
+
     <!-- Website scripts -->
     <script src="assets/js/app.js"></script>
 
