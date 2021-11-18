@@ -102,6 +102,41 @@
     outline: none;
   }
 
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+    width: 300px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: var(--color-secondary-0);
+    transform: rotateY(180deg);
+  }
+
   footer {
     background-color: var(--color-primary-0);
     padding: 1.25rem;
@@ -114,32 +149,6 @@
 
   .footer-section{
     margin: 2rem;    
-  }
-
-  .gol-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .gol-control{
-    background-color: var(--color-tertiary-0); /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    margin: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width : 100%;
-    height: 50px;
-  }
-
-  .gol-controls{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;    
   }
 
   .hero {
@@ -198,7 +207,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex: 0 0 100%;
     align-items: center;
@@ -229,7 +238,6 @@
     display: flex;
     justify-content: center;
     padding: 1rem;
-    z-index: 1;
   }
 
   .project-card{
@@ -239,6 +247,7 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
+    z-index: 1;
   }
 
   .project-card img{
@@ -275,6 +284,10 @@
   .projects-header{
     text-align: center;
     padding: var(--bottom-margin);
+  }
+
+  .projects-wrapper{
+    position: relative;
   }
 
   .skills{
