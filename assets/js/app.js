@@ -3,10 +3,11 @@ let canvas = document.getElementById("gol-canvas");
 let startButton = document.getElementById("gol-start-button");
 let pauseButton = document.getElementById("gol-pause-button"); 
 let resetButton = document.getElementById("gol-reset-button");
+let checkGOL = document.getElementById("project-link");
 
 let interval;
 const intervalTime = 350;
-const fieldWidth = 20;
+const fieldWidth = 15;
 
 let intervalFunc = function () {
    game.calcNextStates();
@@ -49,6 +50,8 @@ canvas.addEventListener('click', function (event) {
     grid.drawRectByArray(game.gameField, State.colorCode);
 });
 
+checkGOL.addEventListener('click', startGame);
+
 // startButton.addEventListener('click', startGame);
 // pauseButton.addEventListener('click', pauseGame);
 // resetButton.addEventListener('click', resetGame);
@@ -64,7 +67,7 @@ function fitToContainer(aCanvas){
 
 const grid = new Grid(canvas, fieldWidth);
 
-const game = new GameOfLife(grid.getFieldCount());
+const game = new GameOfLife(grid.getFieldCount(), StartSequence.rPentomino);
 
 
 grid.drawRectByArray(game.gameField, State.colorCode);

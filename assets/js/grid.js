@@ -159,7 +159,6 @@ class Grid {
     /**
      * Draws each field of an 2D Array as a Rectangle on the Canvas. 
      * Each Index determins its unique place on the Canvas, depending on this.fieldWidth.
-     * Also redraws the Gridlines.
      * @param {Array(number)} Arr- 2D Array containing Values, which determin what is to be drawn on the Canvas
      * @param {function(State)} func- Callback function which determines which color is to be drawn.
      */
@@ -170,8 +169,6 @@ class Grid {
                 this.drawRect(this.getRectByIndex(new Index({x, y})), arr[x][y], func);               
             }
         }
-
-        this.drawGridLines();
     }
 
     /**

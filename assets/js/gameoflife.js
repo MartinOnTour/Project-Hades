@@ -8,15 +8,41 @@ const State = {
     /**
      * Returns the corresponding color for a certain state(dead|alive).
      * @param {State} aState - accepts a state dead|alive.
-     * @returns - color which corresponds to this state.
+     * @returns - color String which corresponds to this state.
      */
     colorCode(aState){
         switch (aState) {
-            case State.dead: return 'lightgrey';            
+            case State.dead: return "#bbbbbb";            
             case State.alive: return 'white';
             default: return 'red'
         }
     }
+}
+
+/**
+ * Collection of Arrays which can be used as Starting sequences
+ */
+const StartSequence = {
+    /**
+     * Empty Sequence
+     */
+    default : [],
+
+    /**
+     * Long living Sequencs ca 1k Iterations before it stabilizes, good for demonstration purposes
+     */
+    rPentomino : [    [0, 1, 1], 
+                [1, 1, 0], 
+                [0, 1, 0]],
+
+    /**
+     * Ca 5k Iterations befor the patterns stabilizes
+     */
+    acorn : [
+        [0, 1, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 0, 0, 0],
+        [1, 1, 0, 0, 1, 1, 1],
+    ]
 }
 
 /**
@@ -42,11 +68,39 @@ class GameOfLife {
     /**
      * Create an instance of the Game of Life on a Quadratic 2D Array.
      * @param {number} dim - width of the Quadratic 2D Array.
+     * @param {Array(number)} - Array of starting values which are inserted in the middle of the gameField Array. Throws consol Error if Array is invalid, or to large to insert.  
      */
-    constructor (dim) {
+    constructor (dim, startSequence = StartSequence.default) {
         this.dim = dim;
         this.gameField = this.createFieldsArray(dim);
         this.totalAliveCount = 0;
+
+        // sort our invalid array sizes
+        if (!Array.isArray(startSequence) || dim < startSequence.length) {
+            console.error("startSequence is no valid Array")
+        } else if(startSequence.length > this.gameField.length || startSequence[0].length > this.gameField.length) {
+            console.error("Dimension for the Game is to small to fit the StartSequence. Empty Start was choosen instead");
+        } else {
+            // center the insert of the Startsequence on the middel of the gameField Array
+            let x = ~~(this.gameField.length / 2) - ~~(startSequence.length / 2);
+
+            let y = 0;
+            if (Array.isArray(startSequence[0])) {
+                y = ~~(this.gameField.length / 2) - ~~(startSequence.length / 2);
+
+                for (let i = 0; i < startSequence.length; i++) {
+                    for (let j = 0; j < startSequence[0].length; j++) {
+                       this.gameField[x + i][y + j] = startSequence[i][j];                     
+                    }                
+                }
+            } else {
+                for (let i = 0; i < startSequence.length; i++) {
+                       this.gameField[x + i][y + j] = startSequence[i][j];                     
+                }
+            }
+
+
+        }
     }
 
     /**
@@ -137,6 +191,9 @@ class GameOfLife {
         return arr;
     }
 
+    /**
+     * resets the values of all Values inside the gameField to State.dead.
+     */
     reset(){
         this.ended = false;
         this.gameField = this.createFieldsArray(this.dim);
